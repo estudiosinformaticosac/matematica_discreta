@@ -128,7 +128,7 @@ Para ver la conexión entre esta imagen y el principio de inducción matemática
 Si sabemos que una determinada afirmación es verdadera para algunos casos particulares, surge la pregunta. ¿Dicha afirmación sigue siendo verdadera para los infinitos números naturales restantes?
 \bigskip 
 
-Existen muchas afirmaciones que sólo son válidas para un número finito de casos y en consecuencia son falsas para un número infinito de situaciones. Sin embargo, podemos encontrar proposiciones (afirmaciones) que son verdaderas para todos los números naturales. 
+Existen muchas afirmaciones que sólo son válidas para un número finito de casos y en consecuencia son falsas para un número infinito de situaciones. Sin embargo, podemos encontrar proposiciones (afirmaciones) que son verdaderas para todos los números naturales.
 \bigskip
 
 Analicemos los siguientes ejemplos: 
@@ -154,7 +154,7 @@ Consiste en demostrar que la implicación $P(h) \to P(h + 1)$ es verdadera.
 \indent Se llama \textbf{Hipótesis inductiva} a \textbf{P(h)}, es decir la proposición o afirmación evaluada para \textbf{n=h}. Se asume que la hipótesis inductiva es Verdadera.
 \bigskip
 
-\indent Se llama \textbf{Tesis inductiva} a \textbf{P(h + 1)}, es decir la proposición o afirmación evaluada para para \textbf{n=h+1}.
+\indent Se llama \textbf{Tesis inductiva} a \textbf{P(h + 1)}, es decir la proposición o afirmación evaluada para \textbf{n=h+1}.
 
 \subsubsection{Enunciado: Primer Principio de Inducción Matemática, Débil o Clásica}
 \label{sec:enunciado-induccion-clasica}
@@ -305,7 +305,7 @@ Al finalizar la ejecución, se afirma que $fact = n!$. \bigskip
 \noindent \textbf{Solución por Inducción}
 Se demostrará que $fact = i!$ es un invariante para el ciclo. \bigskip
 
-\textit{[Paso Base]} 
+\textit{[Paso Básico]} 
 
 Antes de la primera evaluación de la condición, $i = 1$ y $fact = 1$. Por definición, $1! = 1$, por lo tanto $fact = 1!$.
 
@@ -682,23 +682,20 @@ El comportamiento algebraico de una ley de composición interna se clasifica seg
 \begin{itemize}
     \item \textbf{Asociatividad:} Una ley de composición es asociativa si la forma en que se agrupan los operandos no altera el resultado final. Formalmente, para todo $a, b, c \in E$, se debe cumplir la igualdad $(a * b) * c = a * (b * c)$.
     \begin{align*}    
-    \forall a, b, c \in E: (a * b) * c = a * (b * c).  
+    \forall a, b, c \in E: (a * b) * c = a * (b * c).
     \end{align*}
     \textit{Ejemplo:} En $(\mathbb{Z}, +)$, $(2 + 3) + 4 = 2 + (3 + 4) = 9$.
-    
     \item \textbf{Conmutatividad:} Establece que el orden de los operandos en la operación no modifica el resultado. Se verifica si, para todo par de elementos $a, b \in E$, se cumple que $a * b = b * a$.
     \begin{align*} 
     \forall a, b \in E: a * b = b * a.
     \end{align*}
     \textit{Ejemplo:} En $(\mathbb{R}, \cdot)$, $5 \cdot 8 = 8 \cdot 5 = 40$.
-    
     \item \textbf{Distributividad:} Esta propiedad relaciona dos leyes de composición interna distintas (por ejemplo, representadas por $\perp$ y $*$) que operan sobre el mismo conjunto. Se postula que $\perp$ es distributiva con respecto a $*$ si para todo $a, b, c \in E$ se satisface simultáneamente por izquierda y por derecha.
     \begin{align*}        
         Izquierda: a \perp (b * c) = (a \perp b) * (a \perp c) \\
         Derecha: (a * b) \perp c = (a \perp c) * (b \perp c)   
     \end{align*}    
     \textit{Ejemplo:} Multiplicación respecto a la suma: $2 \cdot (3 + 4) = (2 \cdot 3) + (2 \cdot 4) = 14$.
-    
     \item \textbf{Idempotencia:} Una ley es globalmente idempotente si, al operar cualquier elemento consigo mismo, el resultado es idéntico al elemento original. Es decir, $a * a = a$ para todo $a \in E$.
     \begin{align*}        
     \forall a \in E: a * a = a.
@@ -710,7 +707,6 @@ El comportamiento algebraico de una ley de composición interna se clasifica seg
 \subsubsection{Análisis de las Propiedades Operativas}
 
 Para estos ejemplos, consideraremos el conjunto de los números reales $\mathbb{R}$ o subconjuntos específicos según la propiedad.
-
 \begin{itemize}
 \item \textbf{Asociatividad} 
 La asociatividad permite prescindir de la prioridad en operaciones sucesivas del mismo tipo. Es la base para eliminar paréntesis en expresiones largas.\\
@@ -754,7 +750,7 @@ $$\forall a \in E, \exists b \in E : a * b = e \quad \wedge \quad b * a = e$$
 \textit{Explicación:} $5 + (-5) = 0$. En la multiplicación, el inverso de $x$ es $1/x$ (para $x \neq 0$), pues $x \cdot (1/x) = 1$.
 \bigskip
     
-\item \textbf{Elementos Absorbentes:} Un elemento $h \in E$ se denomina absorbente si al operarlo con cualquier otro elemento $a \in E$, el resultado es invariablemente el propio $h$. Formalmente, $h * a = a * h = h$.
+\item \textbf{Elementos Absorbentes:} Un elemento $h \in E$ se denomina absorbente si al operarlo con cualquier otro elemento $a \in E$, el resultado es invariablemente el propio $h$. Formalmente, $h * a = a * h = h. $
 \[ \exists h \in E : \forall a \in E, a * h = h * a = h \]
 \textit{Ejemplo:} El $0$ en la multiplicación.\\
 \textit{Explicación:} $x \cdot 0 = 0$ para cualquier $x$. El cero anula la influencia del otro operando.
@@ -777,32 +773,31 @@ La expresión formal se desglosa en dos componentes (izquierda y derecha):
 \subsection{Análisis de las Propiedades Relativas a Elementos Singulares}
 
 Para estos ejemplos, consideraremos estructuras algebraicas $(E, *)$ donde $E$ es un conjunto numérico (como $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$) y $*$ es una ley de composición interna (operación).
-
 \begin{itemize}
-\item {Existencia de Elemento Neutro (o Identidad)}
+\item \textbf{Existencia de Elemento Neutro (o Identidad)}
 Es un elemento único, denominado $e$, que al operarse con cualquier otro elemento $a$ del conjunto, lo deja inalterado. El resultado siempre es el propio elemento $a$.\\ 
 \textit{Ejemplo:} El número $0$ en el conjunto de los números enteros bajo la suma $(\mathbb{Z}, +)$. \\
 \textit{Explicación:} Para cualquier entero $a$, se cumple que $a + 0 = 0 + a = a$. Por ejemplo, $5 + 0 = 5$. El cero actúa como la identidad aditiva.
 \bigskip
 
-\item {Existencia de Elementos Inversos (o Simétricos)}
+\item \textbf{Existencia de Elementos Inversos (o Simétricos)}
 Esta propiedad solo puede definirse si ya existe un elemento neutro $e$. Para cada elemento $a$, existe un elemento $b$ tal que su operación resulta en el elemento neutro.\\
 \textit{Ejemplo:} El número $-3$ es el inverso aditivo de $3$ en el conjunto de los números enteros $(\mathbb{Z}, +)$.\\
 \textit{Explicación:} Dado que el neutro de la suma es $0$, buscamos un número tal que $3 + x = 0$. Ese número es $-3$. En términos generales, todo entero $n$ tiene su opuesto $-n$.
 \bigskip
 
-\item {Elementos Absorbentes}
+\item \textbf{Elementos Absorbentes}
 Es un elemento $h$ que, al operar con cualquier otro elemento $a$ del conjunto, "absorbe" la operación, resultando siempre en el propio elemento $h$.\\
 \textit{Ejemplo:} El número $0$ en la multiplicación de números reales $(\mathbb{R}, \cdot)$. \\
 \textit{Explicación:} Para cualquier número real $x$, $x \cdot 0 = 0 \cdot x = 0$. El cero anula cualquier otro número al multiplicarlo.
 
-\textit{Elementos Involutivos}
+\item \textbf{Elementos Involutivos}
 Esta propiedad requiere la existencia previa de un elemento neutro $e$. Un elemento $a$ es involutivo si, al operarse consigo mismo, el resultado es el elemento neutro de la estructura. \\
 \textit{Ejemplo:} El número $-1$ en la multiplicación de números reales $(\mathbb{R}, \cdot)$. \\
 \textit{Explicación:} El neutro de la multiplicación es $1$. Como $(-1) \cdot (-1) = 1$, el $-1$ es un elemento involutivo en este sistema.
 \bigskip
 
-\textit{Regularidad (o Ley de Cancelación)}
+\item \textbf{Regularidad (o Ley de Cancelación)}
 Un elemento $a$ se denomina regular si su presencia en ambos miembros de una igualdad permite simplificar la expresión, garantizando la igualdad de los otros operandos.\\
 \textit{Ejemplo:} Si $a + x = a + y$, podemos restar $a$ en ambos lados para obtener $x = y$. \\
 \textit{Explicación:} Si tenemos $5 + x = 5 + y$, el hecho de que $5$ sea regular nos permite restar en ambos lados y deducir que $x = y$. 
