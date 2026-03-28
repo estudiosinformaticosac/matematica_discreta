@@ -1,0 +1,13 @@
+# Archivos LaTeX
+*.pdf
+*.log
+*.out
+*.aux
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Carpetas temporales
+_build/
+build/
