@@ -1,0 +1,411 @@
+\documentclass{article}
+
+% --- Optimización de Codificación y Lenguaje ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+
+% --- Configuración de Página ---
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=3cm,right=3cm,marginparwidth=1.75cm]{geometry}
+
+% --- Paquetes de Contenido y Estética ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{titling}
+\usepackage{setspace}
+
+% -- Interlineado
+\onehalfspacing 
+
+% --- Paquete para modificar comandos (necesario para \pretocmd) ---
+\usepackage{etoolbox}
+% --- Redefinición para que cada \section inicie en página nueva ---
+\pretocmd{\section}{\clearpage}{}{}
+
+% --- Definiciones de Título ---
+\title{Matemática Discreta}
+\newcommand{\subtitle}{Trabajos Prácticos}
+
+\renewcommand{\maketitlehookb}{
+    \begin{center}
+        \large \subtitle
+    \end{center}
+}
+
+\author{Angel Castiglia}
+\date{Marzo, 2026}
+
+% --- Configuración de Hipervínculos (Posicionamiento Crítico Final) ---
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+\begin{document}
+
+\maketitle
+
+% --- Estructura de Navegación ---
+\tableofcontents
+
+\section{Números Naturales - Inducción Matemática}
+\label{sec:induccion-matematica}
+
+\subsection{Problema 1}
+\label{sec:problema-1}
+
+\textit{Demostrar que, para $n \in \mathbb{N}$, la suma de todos los números impares menores que $2n$ es igual a $n^2$.}
+
+\bigskip
+
+\textit{Solución.} El enunciado afirma la validez para $n \geq 1$ de la igualdad:
+\begin{equation}
+1 + 3 + 5 + \cdots + (2n - 1) = n^2 \label{eq:suma-impares} \tag{1}
+\end{equation}
+
+Para su demostración se aplica el método de inducción matemática:
+
+\begin{itemize}
+    \item Para $n = 1$ es válido, pues el único número impar menor que $2 \cdot 1$ es $1$, y claramente es igual a $1^2$.
+    \item Se asume que la proposición es válida para $n$, es decir, se asume como Hipótesis de Inducción (H.I.) la expresión (1).
+    \item Es necesario probar que la proposición es válida para $n + 1$, es decir, se debe probar que:
+    \[
+    1 + 3 + 5 + \cdots + (2n - 1) + (2n + 1) = (n + 1)^2
+    \]
+    Lo anterior se prueba de esta manera:
+    \begin{align*}
+    1 + 3 + 5 + \cdots + (2n - 1) + (2n + 1) &\stackrel{H.I.}{=} n^2 + 2n + 1 \\
+    &= (n + 1)^2
+    \end{align*}
+  
+    Así, la proposición es válida para $n + 1$.
+\end{itemize}
+
+Con lo cual es válida para todo $n \geq 1$.
+
+\subsubsection{Evaluación del Razonamiento - Problema 1}
+\label{sec:evaluacion-1}
+
+\paragraph{Análisis del Paso Base ($n=1$)}
+\begin{itemize}
+    \item Se verifica correctamente el anclaje de la inducción. Para $n=1$, el límite superior es $2(1) = 2$. El único número impar estrictamente menor que $2$ es el $1$.
+    \item La comprobación aritmética es trivial pero necesaria: $1 = 1^2$. Esto demuestra que el subconjunto de proposiciones tiene al menos un elemento verdadero, cumpliendo con la base inductiva.
+\end{itemize}
+
+\paragraph{Formulación de la Hipótesis Inductiva (H.I.)}
+\begin{itemize}
+    \item Se asume correctamente que la proposición $P(n)$ es verdadera para un $n$ arbitrario. Esta suposición no es una afirmación de validez universal en este punto, sino la construcción del antecedente lógico para la implicación que se demostrará en el siguiente paso. La ecuación queda establecida como:
+    \[
+    1 + 3 + 5 + \dots + (2n - 1) = n^2
+    \]
+\end{itemize}
+
+\paragraph{Desarrollo del Paso Inductivo ($n+1$)}
+\begin{itemize}
+    \item El objetivo metodológico es demostrar que $P(n) \implies P(n+1)$. Se identifica con precisión cuál es el siguiente término de la sucesión. Si el término $n$-ésimo es $(2n - 1)$, el término $(n+1)$-ésimo se obtiene sustituyendo $n$ por $(n+1)$, resultando en $2(n+1) - 1 = 2n + 2 - 1 = 2n + 1$.
+    \item Analicemos la sustitución algebraica. Al plantear la suma para $n+1$, se agrupan los primeros $n$ términos y se sustituyen por $n^2$, recurriendo legítimamente a la Hipótesis Inductiva:
+    \[
+    \underbrace{1 + 3 + 5 + \dots + (2n - 1)}_{\text{Sustitución por H.I.} = n^2} + (2n + 1)
+    \]
+    \item Finalmente, la expresión resultante, $n^2 + 2n + 1$, se factoriza correctamente como un trinomio cuadrado perfecto: $(n + 1)^2$. Esto concluye formalmente que la propiedad se preserva para el sucesor de $n$.
+\end{itemize}
+
+\bigskip
+
+\subsection{Problema 2}
+\label{sec:problema-2}
+
+\textit{Demostrar que $n^3 - 4n + 6$  es divisible por 3, $\forall n \ge 1$.}
+
+\bigskip
+
+\noindent \textit{Solución.} Al aplicar el método de inducción, la proposición es válida para $n = 1$, pues $1 - 4 + 6 = 3$, y 3 es divisible por 3.
+
+\begin{itemize}
+    \item Se asume que la proposición es válida para $n$, es decir, que existe $k \in \mathbb{Z}$ tal que $n^{3} - 4n + 6 = 3k$.
+    \item Se prueba que la proposición es válida para $n + 1$:
+
+    \begin{align*}
+        (n+1)^{3} - 4(n+1) + 6 &= n^{3} + 3n^{2} + 3n + 1 - 4n - 4 + 6 \\
+                                &= n^{3} - 4n + 6 + 3n^{2} + 3n - 3 \\
+                                &\stackrel{H.I.}{=} 3k + 3(n^{2} + n - 1) \\
+                                &= 3(k + n^{2} + n - 1) = 3k'
+    \end{align*}
+\end{itemize}
+
+\noindent Con $k' = (k + n^{2} + n - 1) \in \mathbb{Z}$ se prueba que es un múltiplo de 3, y así la proposición es válida para $n + 1$.
+
+\subsubsection{Evaluación del Razonamiento - Problema 2}
+\label{sec:evaluacion-2}
+
+\paragraph{Análisis del Paso Base}
+Toda demostración inductiva requiere un punto de anclaje empírico que demuestre que el conjunto de proposiciones verdaderas no es vacío.
+\begin{itemize}
+    \item Sustitución: Al evaluar la función polinómica para $n=1$, se obtiene $1^3 - 4(1) + 6 = 3$.
+    \item Justificación Lógica: El resultado es $3$. Según la definición de divisibilidad en la aritmética de los números enteros, un número entero $a$ es divisible por $b$ si existe un entero $k$ tal que $a = b \cdot k$. Dado que $3 = 3 \cdot 1$, la proposición es válida para el caso inicial.
+\end{itemize}
+
+\paragraph{Formulación de la Hipótesis Inductiva (H.I.)}
+El núcleo de la inducción radica en asumir la validez de la proposición para un valor arbitrario $n$.
+\begin{itemize}
+    \item Traducción Algebraica: La frase ``es divisible por 3'' se traduce a la ecuación $n^3 - 4n + 6 = 3k$, donde $k \in \mathbb{Z}$ (el conjunto de los números enteros).
+    \item Propósito: Esta ecuación no es una conclusión, sino una herramienta temporal (antecedente) que se utilizará obligatoriamente en la siguiente fase de la demostración.
+\end{itemize}
+
+\paragraph{Desarrollo del Paso Inductivo}
+El objetivo metodológico es demostrar que la propiedad se hereda al elemento sucesor, es decir, a $n+1$. Se debe probar que al evaluar el polinomio en $n+1$, el resultado final puede factorizarse como un múltiplo de $3$.
+\begin{itemize}
+    \item Expansión Binomial: Se inicia sustituyendo $n$ por $n+1$, lo que genera la expresión $(n+1)^3 - 4(n+1) + 6$. Según el Teorema del Binomio de Newton, el término cúbico se expande como $n^3 + 3n^2 + 3n + 1$.
+    \item Reagrupación Estratégica: Esta es la fase crítica del razonamiento. En lugar de simplificar los términos semejantes inmediatamente, el álgebra se manipula con un objetivo claro: \textbf{hacer aparecer la expresión exacta de la Hipótesis Inductiva}. Por ello, se agrupan los términos $(n^3 - 4n + 6)$ al inicio de la ecuación.
+    \item Sustitución y Factorización: Una vez aislada la estructura de la H.I., se sustituye por su equivalente algebraico ($3k$). La expresión restante, $3n^2 + 3n - 3$, comparte un factor común evidente. Al extraer el factor $3$ de toda la expresión, se obtiene $3(k + n^2 + n - 1)$.
+    \item Clausura de los Enteros: El razonamiento concluye apelando a las propiedades de anillo de los números enteros. Dado que $k$ y $n$ son enteros, cualquier combinación de sumas, restas y multiplicaciones entre ellos (en este caso, $k + n^2 + n - 1$) resultará indefectiblemente en otro número entero, denominado $k'$. Por lo tanto, la expresión completa toma la forma $3k'$, demostrando formalmente su divisibilidad por $3$.
+\end{itemize}
+
+\subsection{Problema 3}
+\label{sec:problema-3}
+
+\textit{Demostrar que $4^{n-1} + 15n - 16$ es divisible por 9 para todo $n \in \mathbb{N}$ con $n \ge 1$.}
+
+\bigskip
+
+\noindent \textit{Solución.} Se procede por inducción:
+
+\begin{itemize}
+    \item Para $n = 1$ es válido, pues $1 + 15 - 16 = 0$, y $0$ es divisible por $9$.
+    \item Se asume que la proposición es válida para $n$, es decir, que existe $k \in \mathbb{Z}$ tal que $4^{n-1} + 15n - 16 = 9k$, es decir, $4^{n-1} = 9k - 15n + 16$.
+    \item Se prueba que la proposición es válida para $n + 1$:
+    
+    \begin{align*}
+    4^{n+1-1} + 15(n + 1) - 16 \quad &= \quad 4 \cdot 4^{n-1} + 15n + 15 - 16 \\
+    &\stackrel{H.I.}{=} \quad 4(9k - 15n + 16) + 15n - 1 \\
+    &= \quad 36k - 60n + 64 + 15n - 1 \\
+    &= \quad 9 (4k - 5n + 7)
+    \end{align*}
+\end{itemize}
+
+\noindent Como $4k - 5n + 7$ es un número entero, se prueba que es un múltiplo de $9$ y así la proposición es válida para $n + 1$.
+
+\bigskip
+
+\noindent Con lo cual se ha demostrado la proposición. 
+
+\bigskip
+
+\subsubsection{Evaluación del Razonamiento - Problema 3}
+\label{sec:evaluacion-3}
+
+\paragraph{Análisis del Paso Base}
+\textit{Para $n = 1$ es válido, pues $1 + 15 - 16 = 0$, y $0$ es divisible por $9$.}
+
+\paragraph{Formulación de la Hipótesis Inductiva (H.I.) y Desarrollo}
+\begin{itemize}    
+    \item Se asume que la proposición es válida para $n$, es decir, que existe $k \in \mathbb{Z}$ tal que $4^{n-1} + 15n - 16 = 9k$, es decir, $4^{n-1} = 9k - 15n + 16$.
+    \item Se prueba que la proposición es válida para $n + 1$:
+    \begin{align*}
+    4^{n+1-1} + 15(n + 1) - 16 &= 4 \cdot 4^{n-1} + 15n + 15 - 16 \\
+    &\stackrel{H.I.}{=} 4(9k - 15n + 16) + 15n - 1 \\
+    &= 36k - 60n + 64 + 15n - 1 \\
+    &= 9(4k - 5n + 7)
+    \end{align*}
+    
+    Como $4k - 5n + 7$ es un número entero, se prueba que es un múltiplo de $9$ y así la proposición es válida para $n + 1$.
+\end{itemize}
+
+Con lo cual se ha demostrado la proposición. 
+
+\subsection{Problema 4}
+\label{sec:problema-4}
+
+\textit{Demostrar por inducción matemática que $7^n - 2^n$ es múltiplo de 5 para todo $n \in \mathbb{N}$.}
+\bigskip
+
+\textit{Solución.} Para el desarrollo de la demostración considerar que se tiene la proposición 
+
+$P(n) : 7^n - 2^n = 5 \cdot q$, para $q \in \mathbb{N}$.
+\bigskip
+\begin{itemize}
+    \item \textbf{Paso base, $n = 1$} \\
+$P(1) : 7^1 - 2^1 = 7 - 2 = 5$ \\
+La proposición $P(1)$ es verdadera porque al evaluar $7^1 - 2^1$ se obtiene como resultado el número 5, el cual es múltiplo de 5.
+\end{itemize}
+
+
+\begin{itemize} 
+\item \textbf{Paso inductivo} \\
+\textbf{Hipótesis inductiva, $n = h$} \\
+$P(h) : 7^h - 2^h = 5 \cdot m$, para $m \in \mathbb{Z}^+ \implies 7^h = 5 \cdot m + 2^h$ \\
+Se asume que la proposición $P(h)$ es verdadera. \\
+\textbf{Tesis inductiva $n = h + 1$} \\
+$P(h+1) : 7^{h+1} - 2^{h+1} = 5 \cdot r$
+\end{itemize}
+
+\textit{Desarrollo}
+\begin{align*}
+    &=7^{h+1} - 2^{h+1} = 5 \cdot r \\
+    &= 7 \cdot 7^h - 2 \cdot 2^h = 5r \\
+    &= 7(5m + 2^h) - 2 \cdot 2^h = 5r \\
+    &\quad 7 \cdot 5m + 7 \cdot 2^h - 2 \cdot 2^h = 5r
+\end{align*}
+
+\noindent Reemplazo por hipótesis inductiva \\
+\noindent f.c. $2^h$
+
+\begin{align*}
+    7 \cdot 5m + 2^h (7 - 2) &= 5r \\
+    7 \cdot 5m + 2^h \cdot 5 &= 5r \\
+    5(7 \cdot m + 2^h) &= 5r
+\end{align*}
+
+\subsubsection{Evaluación del Razonamiento - Problema 4}
+\label{sec:evaluacion-4}
+
+\begin{itemize}
+\item Planteamiento inicial\\
+Se parte de la expresión evaluada para el siguiente número en la sucesión, es decir, $n = h+1$:
+\[ 7^{h+1} - 2^{h+1} \]
+
+\item Descomposición de potencias\\
+Se separan los exponentes aplicando la propiedad algebraica $x^{a+1} = x \cdot x^a$:
+\[ = 7 \cdot 7^h - 2 \cdot 2^h \]
+
+\item Sustitución de la hipótesis\\
+Se reemplaza el término $7^h$ por la equivalencia que se había asumido como cierta y despejado previamente en la hipótesis inductiva ($5m + 2^h$):
+\[ = 7 \cdot (5m + 2^h) - 2 \cdot 2^h \]
+
+\item Propiedad distributiva\\
+Se distribuye el número 7, multiplicándolo por los dos términos que están dentro del paréntesis:
+\[ = 7 \cdot 5m + 7 \cdot 2^h - 2 \cdot 2^h \]
+
+\item Factor común parcial\\
+Se extrae el término $2^h$ como factor común, operando exclusivamente sobre los dos últimos sumandos:
+\[ = 7 \cdot 5m + 2^h (7 - 2) \]
+
+\item Resolución de la resta\\
+Se efectúa la operación aritmética básica dentro del paréntesis:
+\[ = 7 \cdot 5m + 2^h \cdot 5 \]
+
+\item Factor común general\\
+Se extrae el número 5 como factor común de ambos sumandos. Aquí se corrige el error del documento original, conservando intacta la variable $m$ que multiplica al 7 en el primer término:
+\[ = 5 \cdot (7m + 2^h) \]
+
+\item Conclusión de la tesis\\
+Se demuestra que la expresión resultante tiene la estructura exacta de un múltiplo de 5, expresándolo de la forma $5 \cdot r$:
+\[ = 5 \cdot r \]
+
+\item \textit{(Siendo el número entero $r = 7m + 2^h$).} Al llegar a esta igualdad sin perder ninguna variable, queda demostrada con total rigor la proposición $P(h+1)$, y por lo tanto, por el Principio de Inducción Matemática, la afirmación es verdadera para todo número natural.
+\end{itemize}
+
+
+\subsection{Problema 5}
+\label{sec:problema-5}
+\textit{Probar utilizando el método de inducción que $\forall n \in \mathbb{N}$ $x^n - y^n$ es divisible por $x - y$}
+\bigskip
+
+\textit{Solución.} Para el desarrollo de la demostración considerar que se tiene la proposición 
+
+
+\noindent $\forall n \in \mathbb{N} \quad X^n - Y^n \text{ es divisible por } X - Y$ \\[0.3cm]
+$P(n): X^n - Y^n = (X - Y)q \quad ; \quad q \in \mathbb{Z} \quad \forall n \in \mathbb{N}$
+
+\begin{itemize}
+\item  \textbf{Paso base, $n=1$} \\
+$X^1 - Y^1 = X - Y$ se cumple, por lo tanto $P(1)$ es verdadera.
+
+\item \textbf{Paso inductivo} \\
+\textbf{Hipótesis inductiva, $n=h$} \\
+$P(h): X^h - Y^h = (X - Y)q_1 \quad , \quad q_1 \in \mathbb{Z}$
+
+\vspace{0.2cm}
+\noindent \textbf{Tesis inductiva, $n=h+1$} \\
+$P(h+1): X^{h+1} - Y^{h+1} = (X - Y) \cdot q_2 \quad ; \quad q_2 \in \mathbb{Z}$
+
+\vspace{0.4cm}
+\noindent \textbf{Demostración}
+\begin{align}
+    X \cdot X^h - Y \cdot Y^h &= (X - Y) q_2 
+\end{align}
+
+\noindent Despejando de la Hip. inductiva:
+\[ X^h = (X - Y)q_1 + Y^h \]
+
+\noindent Reemplazo en (1):
+\begin{align*}
+    X[(X - Y)q_1 + Y^h] - Y \cdot Y^h &= (X - Y) \cdot q_2 \\
+    \intertext{distrib. $X$:}
+    (X - Y)q_1 X + Y^h X - Y \cdot Y^h &= (X - Y)q_2 \\
+    \intertext{factor común $Y^h$:}
+    (X - Y)q_1 X + Y^h(X - Y) &= (X - Y)q_2 \\
+    \intertext{factor común $(X - Y)$:}
+    (X - Y)[q_1 X + Y^h] &= (X - Y)q_2
+\end{align*}
+
+\noindent Tenemos que $[q_1 X + Y^h]$ representa una forma polinómica válida.
+\[ [q_1 X + Y^h] = q_2 \]
+Por lo tanto $P(n+1)$ es verdadera.
+\end{itemize}
+
+
+\subsubsection{Evaluación del Razonamiento - Problema 5}
+\label{sec:evaluacion-5}
+\bigskip
+
+\noindent Proposición a demostrar para todo número natural:
+\[ \forall n \in \mathbb{N} \quad X^n - Y^n \text{ es divisible por } X - Y \]
+
+\noindent Definición formal de la proposición $P(n)$:
+\[ P(n): X^n - Y^n = (X - Y)q \quad ; \quad q \in \mathbb{Z} \quad \forall n \in \mathbb{N} \]
+
+\textbf{Paso Base ($n=1$)}
+Al evaluar la proposición para el primer elemento:
+\[ X^1 - Y^1 = X - Y \]
+La igualdad se cumple trivialmente (con $q=1$). Por lo tanto, $P(1)$ es verdadera.
+
+\textbf{Paso Inductivo}
+
+\textbf{Hipótesis inductiva ($n=h$):}
+Se asume la validez de la proposición para un $h$ genérico.
+\[ P(h): X^h - Y^h = (X - Y)q_1 \quad , \quad q_1 \in \mathbb{Z} \]
+
+\textbf{Tesis inductiva ($n=h+1$):}
+Se debe probar la validez para el sucesor.
+\[ P(h+1): X^{h+1} - Y^{h+1} = (X - Y) \cdot q_2 \quad ; \quad q_2 \in \mathbb{Z} \]
+
+\textbf{Demostración}
+Se desdoblan los exponentes en la expresión de la Tesis Inductiva, formulando la ecuación de trabajo (1):
+\begin{equation}
+    X \cdot X^h - Y \cdot Y^h = (X - Y) q_2 \tag{1}
+\end{equation}
+
+\noindent Despejando el término $X^h$ de la Hipótesis inductiva:
+\[ X^h = (X - Y)q_1 + Y^h \]
+
+\noindent Reemplazo de esta expresión en la ecuación (1):
+\[ X \left[ (X - Y)q_1 + Y^h \right] - Y \cdot Y^h = (X - Y) \cdot q_2 \]
+
+\noindent Se aplica la propiedad distributiva con el factor $X$:
+\[ (X - Y)q_1 X + Y^h X - Y \cdot Y^h = (X - Y)q_2 \]
+
+\noindent Se extrae el factor común $Y^h$ de los últimos dos términos del miembro izquierdo:
+\[ (X - Y)q_1 X + Y^h(X - Y) = (X - Y)q_2 \]
+
+\noindent Se extrae el binomio factor común $(X - Y)$ de la expresión total:
+\[ (X - Y) \left[ q_1 X + Y^h \right] = (X - Y)q_2 \]
+
+\noindent Análisis por clausura: Tenemos que $\left[ q_1 X + Y^h \right]$ representa una forma polinómica válida en el anillo de los enteros. Por correspondencia estructural:
+\[ \left[ q_1 X + Y^h \right] = q_2 \]
+Se confirma la existencia del entero $q_2$. Por lo tanto, la implicación lógica se cumple y $P(n+1)$ es verdadera.
+
+
+% ----------------------------
+\subsection{Problema x}
+\label{sec:problema-x}
+\textit{Enunciado x}
+\bigskip
+\subsubsection{Evaluación del Razonamiento - Problema x}
+\label{sec:evaluacion-x}
+\bigskip
+\paragraph{Análisis del Paso Base xxx}
+\textit{xxxx}
+\paragraph{xxx}
+
+
+
+\end{document}
