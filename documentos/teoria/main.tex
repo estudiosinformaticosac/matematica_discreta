@@ -71,8 +71,8 @@ Su importancia radica en que las computadoras son, por naturaleza, máquinas dis
 \section{Números Naturales}
 \label{sec:numeros-naturales}
 
-\subsection{Los Números Naturales} 
-\label{sec:numeros-naturales-definicion}
+\subsection{Definición de los Números Naturales} 
+\label{sec:definicion-numeros-naturales}
 
 Sea $S \subseteq \mathbb{N}$ un conjunto tal que el número $1$ pertenece a $S$ y para cada $n$ en $S$ se tiene que $n+1$ también pertenece a $S$. Entonces $S$ es el conjunto de los números naturales.
 
@@ -114,6 +114,7 @@ Para comprender el mecanismo lógico subyacente, la inducción suele visualizars
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{imagenes/domino.jpg}
+    \caption{Analogía del Efecto Dominó}
     \label{fig:domino-analogia}
 \end{figure}
 
@@ -141,7 +142,7 @@ La técnica de demostración por inducción matemática es utilizada para probar
 \label{sec:pasos-induccion-matematica}
 La demostración por la técnica de Inducción Matemática consiste en dos pasos:
 \begin{itemize}
-\item \textbf{Paso Básico:} para n = primer elemento del conjunto considerado. Se demuestra la validez de la proposición $p$ evaluada para el primer elemento del conjunto. Puede ser cualquier número natural dependiendo del punto de partida o condición inicial del problema que se está demostrando.
+\item \textbf{Paso Base:} para n = primer elemento del conjunto considerado. Se demuestra la validez de la proposición $p$ evaluada para el primer elemento del conjunto. Puede ser cualquier número natural dependiendo del punto de partida o condición inicial del problema que se está demostrando.
 
 \item\textbf{Paso Inductivo:} 
 Consiste en demostrar que la implicación $P(h) \to P(h + 1)$ es verdadera.
@@ -373,9 +374,10 @@ El Principio del Buen Orden (también conocido como principio de buena ordenaci�
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{imagenes/buen_orden.jpg}
+    \caption{Esquema del Principio del Buen Orden}
     \label{fig:buen-orden-esquema}
 \end{figure}
-
+      
 \subsubsection{Análisis del Principio del Buen Orden}
 \label{sec:analisis-buen-orden}
 
@@ -480,12 +482,51 @@ $S = \mathbb{N}$
 \end{itemize}
 
 
-\section{Estructura de Anillos}
-\label{sec:estructura_de_anillos}
+\section{Estructuras Algebraicas}
+\label{sec:estructuras_algebraicas}
 
-\subsection{Definición de Anillo} 
-\label{sec:definicion_de_anillo}
-Un anillo es una estructura o sistema algebraico fundamental. Formalmente, se define como un conjunto no vacío, comúnmente denotado como $R$ o $A$, que está dotado de dos operaciones binarias (o leyes de composición interna), convencionalmente denominadas "suma" ($+$) y "multiplicación" (denotada por $\cdot$ o simplemente por yuxtaposición). Para que la terna $(R, +, \cdot)$ ostente la categoría matemática de anillo, debe satisfacer rigurosamente los axiomas o postulados estructurales de estructura aditiva, estructura multiplicativa y leyes distributivas. Las leyes de composición son las reglas fundamentales que permiten relacionar u operar los elementos de los conjuntos matemáticos. Se clasifican en:
+
+\subsection{Definición y Clasificación de Estructuras Algebraicas} 
+\label{sec:definicion_clasificacion_estructuras_algebraicas}
+
+Las estructuras algebraicas son sistemas matemáticos formales compuestos por uno o más conjuntos no vacíos, los cuales están dotados de una o varias operaciones (leyes de composición interna o externa) y, en ocasiones, de elementos singulares y relaciones, que satisfacen un conjunto riguroso de axiomas.
+
+Formalmente, una estructura algebraica suele representarse mediante una n-tupla de la forma $(X, *, \circ, \dots, e, \dots)$, donde $X$ es el conjunto base o subyacente, $*$ y $\circ$ representan las operaciones binarias definidas sobre él, y $e$ denota posibles elementos singulares, como un neutro aditivo o multiplicativo.
+
+El propósito fundamental al estudiar estas estructuras es generalizar y abstraer el comportamiento de los sistemas matemáticos habituales (como la aritmética básica de los números enteros o reales). Esta abstracción permite aplicar las mismas leyes lógicas y procedimentales a objetos de diversa naturaleza, tales como matrices, funciones, polinomios, conjuntos, proposiciones lógicas o transformaciones geométricas (como los grupos de simetría).
+
+La clasificación axiomática de las estructuras algebraicas se realiza característicamente en función de la cantidad de operaciones que poseen y de las propiedades operativas que estas satisfacen:
+ \bigskip
+
+\textbf{Estructuras con una sola operación interna:}
+
+\begin{itemize}
+    \item \textbf{Semigrupo:} Es la estructura más básica, consistente en un conjunto dotado de una única operación binaria que cumple inexcusablemente con la propiedad asociativa.
+    \item \textbf{Monoide:} Es una extensión del semigrupo que exige, además de la asociatividad, la existencia de un elemento neutro (o identidad) dentro del conjunto.
+    \item \textbf{Grupo:} Es un monoide en el cual se cumple la propiedad de los inversos; es decir, cada elemento del conjunto posee un simétrico o inverso respecto a la operación. En el caso de que la operación también cumpla con la ley conmutativa, la estructura se clasifica como grupo abeliano.
+\end{itemize}
+
+\textbf{Estructuras con dos operaciones internas:}
+
+\begin{itemize}
+    \item \textbf{Anillo:} Es un sistema algebraico provisto de dos operaciones (convencionalmente denominadas suma y producto). Para poseer esta estructura, el conjunto debe conformar un grupo abeliano bajo la primera operación, constituir un semigrupo bajo la segunda, y vincular ambas leyes de manera que el producto sea distributivo respecto a la suma.
+    \item \textbf{Cuerpo (o Campo):} Representa un grado superior de regularidad algebraica. Se trata de un anillo conmutativo y con unidad (neutro multiplicativo) en el cual absolutamente todo elemento, a excepción del neutro aditivo (cero), posee un inverso multiplicativo. Dicho de otra manera, los elementos no nulos de un cuerpo forman por sí mismos un grupo abeliano bajo la operación del producto.
+    \item \textbf{Álgebra de Boole:} Constituye un conjunto dotado de dos operaciones que gozan de plena simetría axiomática: ambas son asociativas y conmutativas, ambas son distributivas la una respecto de la otra, ambas poseen elementos neutros distintos, y cada elemento del conjunto admite un complementario.
+\end{itemize}
+
+El rigor en la definición de estas estructuras provee las herramientas fundacionales para el análisis de algoritmos, la criptografía, la teoría de códigos y el diseño de circuitos lógicos.
+
+Los elementos singulares son componentes específicos de un conjunto que desempeñan un rol único y distinguido bajo una ley de composición determinada. A diferencia de los elementos genéricos, los singulares poseen propiedades invariantes que definen el comportamiento global de la estructura.
+Estos elementos se categorizan según su impacto en la operación destacando entre ellos: 
+\begin{itemize}
+\item Elemento neutro (o identidad)
+\item Elemento Inverso
+\item Elemento Absorbente
+\item Elemento Involutivos
+\item Regularidad o de Cancelacion
+\end{itemize}
+
+Las leyes de composición son las reglas fundamentales que permiten relacionar u operar los elementos de los conjuntos matemáticos. Se clasifican en:
 \begin{itemize}
     \item Interna
     \item Externa
@@ -493,6 +534,7 @@ Un anillo es una estructura o sistema algebraico fundamental. Formalmente, se de
 
 \subsection{Ley de Composición Interna} 
 \label{sec:leyes_de_composicion_interna}
+
 Una ley de composición interna es una operación definida sobre un conjunto no vacío que cumple con una regla fundamental: 
 \bigskip
 
@@ -671,7 +713,7 @@ Sea la matriz $B = \begin{pmatrix} 4 & 8 \\ 2 & 10 \end{pmatrix}$ y el escalar $
 
 \bigskip
 
-\subsection{Ley de Composición Interna: Propiedades} 
+\subsection{Ley de Composición Interna: Propiedades Basicas y de Elementos Singulares} 
 \label{sec:leyes_de_composicion_interna_propiedades}
 
 El comportamiento algebraico de una ley de composición interna se clasifica según la satisfacción de propiedades operativas y la existencia de elementos con características singulares. Las propiedades fundamentales se detallan a continuación:
@@ -770,7 +812,7 @@ La expresión formal se desglosa en dos componentes (izquierda y derecha):
 \bigskip
 \end{itemize}
 
-\subsection{Análisis de las Propiedades Relativas a Elementos Singulares}
+\subsubsection{Análisis de las Propiedades Relativas a Elementos Singulares}
 
 Para estos ejemplos, consideraremos estructuras algebraicas $(E, *)$ donde $E$ es un conjunto numérico (como $\mathbb{Z}$, $\mathbb{Q}$, $\mathbb{R}$) y $*$ es una ley de composición interna (operación).
 \begin{itemize}
@@ -804,6 +846,13 @@ Un elemento $a$ se denomina regular si su presencia en ambos miembros de una igu
 \bigskip
 
 \end{itemize}
+
+
+
+\subsection{Tipos de Estructuras Algebraicas} 
+\label{sec:tipos_de_estructuras_algebraicas}
+Hola
+
 
 \section{Los Números Enteros}
 \label{sec:numeros-enteros}
