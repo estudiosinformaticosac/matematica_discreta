@@ -41,8 +41,8 @@
 
 La Matemática Discreta es la rama de las matemáticas que se ocupa del estudio de estructuras cuyos elementos pueden contarse uno por uno, es decir, que son separables o discontinuas. A diferencia del cálculo o el análisis matemático, que se centran en el "continuo" (números reales, curvas suaves, cambio infinitesimal), la matemática discreta opera sobre conjuntos finitos o infinitos numerables (como los números enteros).
 
-\subsection{Finitud Local}
-\label{sec:finitud-local}
+\subsection{Aislamiento Algebraico}
+\label{sec:aislamiento-algebraico}
 
 Una estructura matemática se clasifica como discreta cuando sus elementos constitutivos existen en un estado de separación fundamental, desprovistos de una densidad continua intercalada. En marcado contraste con los dominios del continuo (como los números reales, gobernados por el análisis infinitesimal y la infinitud de puntos intermedios), los espacios discretos como los números enteros ($\mathbb{Z}$) se caracterizan por el aislamiento algebraico: cada elemento está flanqueado por un sucesor y un predecesor inmediatos y discretos, suprimiendo cualquier posibilidad de subdivisión infinita o acumulación puntual.
 
@@ -74,7 +74,7 @@ Su importancia radica en que las computadoras son, por naturaleza, máquinas dis
 \subsection{Definición de los Números Naturales} 
 \label{sec:definicion-numeros-naturales}
 
-Sea $S \subseteq \mathbb{N}$ un conjunto tal que el número $1$ pertenece a $S$ y para cada $n$ en $S$ se tiene que $n+1$ también pertenece a $S$. Entonces $S$ es el conjunto de los números naturales.
+Sea $S \subseteq \mathbb{N}$ un conjunto tal que el número $1$ pertenece a $S$ y para cada $n$ $\in$ $S$ se tiene que $n+1$ también pertenece a $S$. Entonces $S$ es el conjunto de los números naturales.
 
 \bigskip
 
@@ -489,7 +489,7 @@ $S = \mathbb{N}$
 \subsection{Definición y Clasificación de Estructuras Algebraicas} 
 \label{sec:definicion_clasificacion_estructuras_algebraicas}
 
-Las estructuras algebraicas son sistemas matemáticos formales compuestos por uno o más conjuntos no vacíos, los cuales están dotados de una o varias operaciones (leyes de composición interna o externa) y, en ocasiones, de elementos singulares y relaciones, que satisfacen un conjunto riguroso de axiomas.
+\textbf{Las estructuras algebraicas} son sistemas matemáticos formales compuestos por uno o más conjuntos no vacíos, los cuales están dotados de una o varias operaciones (leyes de composición interna o externa) y, en ocasiones, de elementos singulares y relaciones, que satisfacen un conjunto riguroso de axiomas.
 
 Formalmente, una estructura algebraica suele representarse mediante una n-tupla de la forma $(X, *, \circ, \dots, e, \dots)$, donde $X$ es el conjunto base o subyacente, $*$ y $\circ$ representan las operaciones binarias definidas sobre él, y $e$ denota posibles elementos singulares, como un neutro aditivo o multiplicativo.
 
@@ -501,22 +501,22 @@ La clasificación axiomática de las estructuras algebraicas se realiza caracter
 \textbf{Estructuras con una sola operación interna:}
 
 \begin{itemize}
-    \item \textbf{Semigrupo:} Es la estructura más básica, consistente en un conjunto dotado de una única operación binaria que cumple inexcusablemente con la propiedad asociativa.
-    \item \textbf{Monoide:} Es una extensión del semigrupo que exige, además de la asociatividad, la existencia de un elemento neutro (o identidad) dentro del conjunto.
-    \item \textbf{Grupo:} Es un monoide en el cual se cumple la propiedad de los inversos; es decir, cada elemento del conjunto posee un simétrico o inverso respecto a la operación. En el caso de que la operación también cumpla con la ley conmutativa, la estructura se clasifica como grupo abeliano.
+    \item Semigrupo
+    \item Monoide
+    \item Grupo
 \end{itemize}
 
 \textbf{Estructuras con dos operaciones internas:}
 
 \begin{itemize}
-    \item \textbf{Anillo:} Es un sistema algebraico provisto de dos operaciones (convencionalmente denominadas suma y producto). Para poseer esta estructura, el conjunto debe conformar un grupo abeliano bajo la primera operación, constituir un semigrupo bajo la segunda, y vincular ambas leyes de manera que el producto sea distributivo respecto a la suma.
-    \item \textbf{Cuerpo (o Campo):} Representa un grado superior de regularidad algebraica. Se trata de un anillo conmutativo y con unidad (neutro multiplicativo) en el cual absolutamente todo elemento, a excepción del neutro aditivo (cero), posee un inverso multiplicativo. Dicho de otra manera, los elementos no nulos de un cuerpo forman por sí mismos un grupo abeliano bajo la operación del producto.
-    \item \textbf{Álgebra de Boole:} Constituye un conjunto dotado de dos operaciones que gozan de plena simetría axiomática: ambas son asociativas y conmutativas, ambas son distributivas la una respecto de la otra, ambas poseen elementos neutros distintos, y cada elemento del conjunto admite un complementario.
+    \item Anillo
+    \item Cuerpo
+    \item Álgebra de Boole
 \end{itemize}
 
 El rigor en la definición de estas estructuras provee las herramientas fundacionales para el análisis de algoritmos, la criptografía, la teoría de códigos y el diseño de circuitos lógicos.
 
-Los elementos singulares son componentes específicos de un conjunto que desempeñan un rol único y distinguido bajo una ley de composición determinada. A diferencia de los elementos genéricos, los singulares poseen propiedades invariantes que definen el comportamiento global de la estructura.
+Los \textbf{elementos singulares} son componentes específicos de un conjunto que desempeñan un rol único y distinguido bajo una ley de composición determinada. A diferencia de los elementos genéricos, los singulares poseen propiedades invariantes que definen el comportamiento global de la estructura.
 Estos elementos se categorizan según su impacto en la operación destacando entre ellos: 
 \begin{itemize}
 \item Elemento neutro (o identidad)
@@ -526,7 +526,7 @@ Estos elementos se categorizan según su impacto en la operación destacando ent
 \item Regularidad o de Cancelacion
 \end{itemize}
 
-Las leyes de composición son las reglas fundamentales que permiten relacionar u operar los elementos de los conjuntos matemáticos. Se clasifican en:
+\textbf{Las leyes de composición} son las reglas fundamentales que permiten relacionar u operar los elementos de los conjuntos matemáticos. Se clasifican en:
 \begin{itemize}
     \item Interna
     \item Externa
@@ -713,7 +713,7 @@ Sea la matriz $B = \begin{pmatrix} 4 & 8 \\ 2 & 10 \end{pmatrix}$ y el escalar $
 
 \bigskip
 
-\subsection{Ley de Composición Interna: Propiedades Basicas y de Elementos Singulares} 
+\subsection{Ley de Composición Interna: Propiedades Básicas y de Elementos Singulares} 
 \label{sec:leyes_de_composicion_interna_propiedades}
 
 El comportamiento algebraico de una ley de composición interna se clasifica según la satisfacción de propiedades operativas y la existencia de elementos con características singulares. Las propiedades fundamentales se detallan a continuación:
@@ -932,7 +932,7 @@ $(\mathbb{Q} \setminus \{0\}, \cdot)$: Los números racionales (excluyendo el ce
 \textit{Ejemplo:} los conjuntos de los números enteros (Z) y racionales (Q), dotados con la operación aritmética de la suma, conforman grupos abelianos perfectos.
 \bigskip
 
-\textbf{Subgrupo:} Se puede definir de manera muy resumida como un grupo dentro de otro grupo
+\textbf{Subgrupo:} Un subconjunto no vacío $H$ de un grupo $G$ constituye un subgrupo si, y solo si, $H$ satisface los axiomas de grupo bajo la misma ley de composición interna definida para $G$.Se puede definir como un grupo dentro de otro grupo.
 \bigskip
 
 \textit{Ejemplo:} el grupo de los números enteros $(\mathbb{Z}, +)$ y el de los números racionales $(\mathbb{Q}
@@ -952,13 +952,124 @@ $(\mathbb{Q} \setminus \{0\}, \cdot)$: Los números racionales (excluyendo el ce
 \subsubsection{Anillo}
 \label{sec:anillo}  
 
-\subsubsection{Cuerpo (o Campo)}
-\label{sec:cuerpo-campo}    
+Un anillo se define formalmente como una estructura algebraica constituida por un conjunto no vacío, denotado comúnmente como $R$, provisto de dos operaciones binarias o leyes de composición interna, habitualmente denominadas adición ($+$) y multiplicación o producto ($\cdot$). Para que la terna $(R, +, \cdot)$ alcance la categoría matemática de anillo, debe satisfacer rigurosamente un conjunto de axiomas interrelacionados:
+
+\begin{itemize}
+    \item Bajo la operación de adición, la estructura $(A, +)$ conforma un \textbf{grupo abeliano}, lo cual exige el cumplimiento de la asociatividad, la conmutatividad, la existencia de un elemento neutro aditivo y de un opuesto aditivo para todos y cada uno de los elementos del conjunto.
+    
+    \begin{itemize}
+        \item \textbf{Asociatividad:} $(a + b) + c = a + (b + c)$ para todo $a, b, c \in R$.
+        \item \textbf{Existencia de elemento neutro ($0$):} Existe $0 \in R$ tal que $a + 0 = a$ para todo $a \in R$.
+        \item \textbf{Existencia de elemento simétrico (opuesto):} Para cada $a \in R$, existe $-a \in R$ tal que $a + (-a) = 0$.
+        \item \textbf{Conmutatividad:} $a + b = b + a$ para todo $a, b \in R$.
+    \end{itemize}    
+    
+    \item Bajo la operación de multiplicación, el sistema $(A, \cdot)$ constituye un \textbf{semigrupo}; es decir, la multiplicación debe ser inexcusablemente asociativa.
+    \begin{itemize}
+        \item \textbf{Clausura:} Si $a, b \in R$, entonces $a \cdot b \in R$.
+        \item \textbf{Asociatividad:} $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ para todo $a, b, c \in R$.
+    \end{itemize}
+
+    \item Ambas leyes de composición se vinculan estructuralmente mediante la \textbf{propiedad distributiva} de la multiplicación respecto de la adición, exigiéndose su cumplimiento tanto por la izquierda como por la derecha.    
+    \begin{itemize}
+        \item \textbf{Distributividad por la izquierda:} $a \cdot (b + c) = (a \cdot b) + (a \cdot c)$.
+        \item \textbf{Distributividad por la derecha:} $(b + c) \cdot a = (b \cdot a) + (c \cdot a)$.
+    \end{itemize}
+
+\end{itemize}
+
+\textbf{Propiedades algebraicas fundamentales}\\
+A partir de su definición fundacional, se deducen propiedades operativas inherentes a cualquier anillo. Por ejemplo:
+
+\begin{itemize}
+    \item \textbf{Elemento absorbente:} $a \cdot 0 = 0 \cdot a = 0$.\\
+    El elemento neutro de la suma actúa como elemento absorbente para la multiplicación.
+
+    \item \textbf{Regla de los signos:} $a \cdot (-b) = (-a) \cdot b = -(a \cdot b)$ y $(-a) \cdot (-b) = a \cdot b$.\\
+    Rigen las reglas algebraicas de los signos.
+\end{itemize}
+
+\textbf{Clasificación} \\
+La estructura de un anillo admite mayores grados de regularidad al imponerse axiomas 
+suplementarios a la multiplicación.\\
+\begin{itemize}
+    \item \textbf{Anillo Conmutativo:} Si la ley multiplicativa goza de la propiedad conmutativa ($a \cdot b = b \cdot a$). \\
+    Ejemplo: $(\mathbb{Z}, +, \cdot)$.
+    \item \textbf{Anillo Unitario} o con unidad Si posee un elemento neutro multiplicativo (denotado por$1$). \\
+    Siendo $1_R$, tal que $a \cdot 1_R = 1_R \cdot a = a$.\\ 
+    Ejemplo: $(\mathbb{Z}, +, \cdot)$.    
+    \item \textbf{Anillo de División} Se dice que un elemento es inversible, o una unidad, si admite un simétrico multiplicativo dentro del anillo.  \\
+    Siendo ($a^{-1}$) tal que $a \cdot a^{-1} = a^{-1} \cdot a = 1_R$. Un anillo unitario es un anillo de división si cada elemento no nulo es una unidad.\\
+    Ejemplo: $(\mathbb{Z}, +, \cdot)$ NO es un anillo de división.
+\end{itemize}
+
+Un concepto de profundo calado analítico es la existencia de \textbf{divisores de cero}. En un anillo, dos elementos no nulos $a$ y $b$ son divisores de cero si su producto resulta en el neutro aditivo ($ab = 0$). La ausencia de divisores de cero garantiza la validez de la ley de simplificación. Cuando un anillo conmutativo y unitario carece estrictamente de divisores de cero, se erige como un \textbf{dominio de integridad}.
+
+
+\subsubsection{Cuerpo}
+\label{sec:cuerpo}    
+Un cuerpo representa el nivel más alto de regularidad operativa. Si un anillo permite sumar y multiplicar, un cuerpo es, esencialmente, un anillo donde además es posible dividir por cualquier elemento que no sea el cero.
+
+\textbf{Definición Axiomática de Cuerpo}
+
+Sea $K$ un conjunto no vacío dotado de dos leyes de composición interna: suma ($+$) y producto ($\cdot$). La estructura $(K, +, \cdot)$ es un cuerpo si se satisfacen los siguientes tres pilares:
+
+\begin{itemize}
+\item \textbf{$(K, +)$ es un Grupo Abeliano} \\
+Se cumplen las propiedades de clausura, asociatividad, existencia de elemento neutro ($0$), existencia de elemento opuesto ($-a$) y conmutatividad.
+
+\item \textbf{$(K \setminus \{0\}, \cdot)$ es un Grupo Abeliano} \\
+Esta es la condición crítica que diferencia al cuerpo de un anillo común. Para el producto se exige:
+\begin{itemize}
+    \item \textbf{Clausura:} El producto de dos elementos no nulos es no nulo.
+    \item \textbf{Asociatividad:} $(a \cdot b) \cdot c = a \cdot (b \cdot c)$.
+    \item \textbf{Existencia de elemento unidad ($1$):} Tal que $a \cdot 1 = a$.
+    \item \textbf{Existencia de elemento inverso:} Para cada $a \in K, a \neq 0$, existe $a^{-1} \in K$ tal que $a \cdot a^{-1} = 1$.
+    \item \textbf{Conmutatividad:} $a \cdot b = b \cdot a$.
+\end{itemize}
+
+\item \textbf{Distribución}
+El producto es distributivo respecto a la suma: $a \cdot (b + c) = a \cdot b + a \cdot c$.
+\end{itemize}
+
+\textbf{Diferencias Clave con los Anillos}\\
+Es importante distinguir por qué no todos los anillos son cuerpos, por ejemplo en el anillo de los enteros $(\mathbb{Z}, +, \cdot)$, el elemento $2$ no tiene un inverso multiplicativo que sea entero ($1/2 \notin \mathbb{Z}$). Por lo tanto, $\mathbb{Z}$ es un anillo, pero no un cuerpo.
+
+ \textbf{Ausencia de Divisores de Cero} \\
+ Una de las propiedades más potentes de un cuerpo es que carece de divisores de cero, lo que lo convierte en un dominio de integridad.En un cuerpo ($K$): Si $a \cdot b = 0$, entonces necesariamente $a = 0$ o $b = 0$. Esta propiedad permite la cancelación en ecuaciones ($ax = ay \implies x = y$ para $a \neq 0$).
+
+ Los cuerpos son la base del Álgebra Lineal. Sin la estructura de cuerpo en el conjunto de escalares, no se podrían definir los espacios vectoriales tal como los conocemos, ya que la resolución de sistemas de ecuaciones lineales requiere la existencia de inversos multiplicativos para despejar incógnitas.
 
 \subsubsection{Álgebra de Boole}
 \label{sec:algebra-de-boole}
 
+Álgebra de Boole es una estructura algebraica $(B, +, \cdot, ', 0, 1)$ donde $B$ es un conjunto no vacío, ( $+$ ) y ( $\cdot$ ) son dos leyes de composición interna (denominadas usualmente suma y producto),( $'$ ) es una operación unaria (complemento), y $0$ y $1$ son elementos singulares (neutros).
 
+Para que la estructura sea considerada un Álgebra de Boole, debe satisfacer los siguientes postulados (basados en los axiomas de Huntington):
+
+\begin{itemize}
+    \item \textbf{Clausura:} Para todo $a, b \in B$, tanto $a + b$ como $a \cdot b$ pertenecen a $B$.
+    \item \textbf{Propiedad Conmutativa:} 
+    \begin{itemize}
+        \item $a + b = b + a$
+        \item $a \cdot b = b \cdot a$
+    \end{itemize}
+    \item \textbf{Propiedad Distributiva (Simetría Axiomática):} A diferencia de los anillos comunes, aquí ambas operaciones son distributivas respecto a la otra:
+    \begin{itemize}
+        \item $a + (b \cdot c) = (a + b) \cdot (a + c)$
+        \item $a \cdot (b + c) = (a \cdot b) + (a \cdot c)$
+    \end{itemize}
+    \item \textbf{Elementos Neutros:} Existen $0, 1 \in B$ tales que:
+    \begin{itemize}
+        \item $a + 0 = a$
+        \item $a \cdot 1 = a$
+    \end{itemize}
+    \item \textbf{Propiedad del Complemento:} Para cada $a \in B$, existe un único $a' \in B$ tal que:
+    \begin{itemize}
+        \item $a + a' = 1$
+        \item $a \cdot a' = 0$
+    \end{itemize}
+\end{itemize}
 
 
 
@@ -968,6 +1079,7 @@ $(\mathbb{Q} \setminus \{0\}, \cdot)$: Los números racionales (excluyendo el ce
 \subsection{Dominio de Integridad} 
 \label{sec:dominio_de_integridad}
 
+a desarrollar ....
 
 
 \end{document}
