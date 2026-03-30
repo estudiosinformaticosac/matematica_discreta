@@ -851,7 +851,115 @@ Un elemento $a$ se denomina regular si su presencia en ambos miembros de una igu
 
 \subsection{Tipos de Estructuras Algebraicas} 
 \label{sec:tipos_de_estructuras_algebraicas}
-Hola
+
+\noindent \textit{En esta sección se presentan las principales estructuras con una sola operación interna.}
+
+\subsubsection{Semigrupo}
+\label{sec:semigrupo}
+
+Un semigrupo se define como un sistema algebraico compuesto por un conjunto no vacío provisto de una única operación binaria (o ley de composición interna) que satisface estrictamente la propiedad asociativa.
+
+Para formalizar este concepto, considérese un conjunto no vacío $G$ y una operación interna denotada abstractamente como $*$. El par o estructura $(G, *)$ adquiere la categoría matemática de semigrupo si y solo si, para cualesquiera elementos $a, b, c$ pertenecientes al conjunto, se cumple ineludiblemente la siguiente igualdad: $a * (b * c) = (a * b) * c$.
+
+A nivel de jerarquía axiomática, el semigrupo es una de las estructuras fundacionales a partir de la cual se construyen sistemas de mayor complejidad mediante la adición de nuevos postulados.
+
+\begin{center}
+Conjunto no vacío $G$ \\
+$\ast$ es una ley de composición interna en $G$\\
+$(G; \ast)$ es un \textbf{semigrupo} si y solo si $\ast$ es \textbf{asociativa} en $G$.
+\end{center}
+\bigskip
+
+\noindent \textit{Ejemplo:} Los Sistemas Numéricos Aritméticos
+
+El modelo más directo se encuentra en el conjunto de los enteros positivos (o números naturales), denotado habitualmente como $\mathbb{N}$. Al dotar a este conjunto con la operación de adición ($+$), la estructura algebraica resultante $(\mathbb{N}, +)$ conforma un \textbf{semigrupo}, puesto que la suma de enteros positivos siempre resulta en un entero positivo y es inherentemente asociativa: $(a + b) + c = a + (b + c)$
+
+De manera análoga, este mismo conjunto bajo la operación de multiplicación, es decir la estructura $(\mathbb{N}, \times)$, también constituye un semigrupo perfecto.
+\bigskip
+
+\noindent \textit{Ejemplo:} La Sustracción en los Números Enteros
+
+Al considerar el conjunto de los números enteros ($\mathbb{Z}$) dotado de la operación aritmética de sustracción ($-$), se obtiene una estructura ($\mathbb{Z}, -$) que es matemáticamente cerrada, pero que no es asociativa.
+
+Para demostrar esta afirmación, basta con evaluar una expresión agrupada de diferentes maneras. Al analizar la sustracción de los enteros 8, 4 y 3, se tiene que agrupar por la izquierda produce: $(8 - 4) - 3 = 4 - 3 = 1$.
+
+Por otra parte, si se altera la agrupación dando prioridad a los operandos de la derecha, el resultado difiere significativamente: $8 - (4 - 3) = 8 - 1 = 7$.
+
+Puesto que $(8 - 4) - 3 \neq 8 - (4 - 3)$, se demuestra analíticamente que la sustracción incumple la ley asociativa y, en consecuencia, el sistema ($\mathbb{Z}, -$) no constituye un semigrupo.
+
+\subsubsection{Monoide}
+\label{sec:monoide}     
+
+Un monoide se define como una estructura algebraica constituida por un conjunto no vacío provisto de una única ley de composición interna que satisface estrictamente dos axiomas fundamentales: la propiedad asociativa y la existencia de un elemento neutro.
+
+Dentro de la jerarquía axiomática, el monoide representa una evolución natural del semigrupo al incorporar la exigencia de un elemento de identidad.
+
+\begin{center}
+$(G; \ast)$ es un semigrupo.\\
+$(G; \ast)$ es un \textbf{monoide} si y solo si posee \textbf{elemento neutro o identidad} $e$.
+\end{center}
+\bigskip
+
+\noindent El monoide añade una capa de complejidad al semigrupo al introducir el concepto de "identidad". El elemento $e$ es aquel que, al operar con cualquier elemento $a \in G$, lo deja invariante ($a \ast e = e \ast a = a$).
+\bigskip
+
+\noindent \textit{Ejemplo:} Si es un monoide: El conjunto de los números enteros con la operación de la suma $(\mathbb{Z},+)$. La suma entre enteros siempre da un entero (ley interna), es asociativa y, lo más importante para este caso, posee al número $0$ como elemento neutro dentro del conjunto.
+\bigskip
+
+\noindent \textit{Ejemplo:} No es un monoide: El conjunto de los números naturales con la suma $(\mathbb{N},+)$. Aunque esta estructura cumple con ser un semigrupo (la suma es interna y asociativa), no es un monoide porque el conjunto de los naturales no incluye al elemento neutro de la suma (el cero).
+
+
+\subsubsection{Grupo}
+\label{sec:grupo}
+Dentro de la sistemática de las estructuras algebraicas, se puede concebir a un grupo como una evolución directa de sistemas más simples. Formalmente, un grupo equivale a un monoide al cual se le ha añadido la exigencia estricta de que cada uno de sus elementos posea un inverso
+
+\begin{center}
+$(G; \ast)$ es un monoide.\\
+$(G; \ast)$ es un \textbf{grupo} si y solo si cada elemento $a \in G$ posee \textbf{elemento inverso} $a'$.
+\end{center}
+\bigskip
+
+\textit{Ejemplo:}
+$(\mathbb{Q} \setminus \{0\}, \cdot)$: Los números racionales (excluyendo el cero) con la multiplicación. El neutro es $1$ y el simétrico de $p/q$ es su recíproco $q/p$.
+\bigskip
+
+\textit{Ejemplo:}
+\noindent $(\mathbb{Z} ; \cdot)$ no es un grupo. Sus elementos no poseen inversos.
+\bigskip
+
+\textbf{Grupo abeliano} o grupo conmutativo, es una estructura algebraica que consiste en un conjunto provisto de una ley de composición interna que satisface los axiomas fundamentales de un grupo, incorporando además la estricta propiedad de conmutatividad
+
+\textit{Ejemplo:} los conjuntos de los números enteros (Z) y racionales (Q), dotados con la operación aritmética de la suma, conforman grupos abelianos perfectos.
+\bigskip
+
+\textbf{Subgrupo:} Se puede definir de manera muy resumida como un grupo dentro de otro grupo
+\bigskip
+
+\textit{Ejemplo:} el grupo de los números enteros $(\mathbb{Z}, +)$ y el de los números racionales $(\mathbb{Q}
+, +)$ actúan como subgrupos estrictos del grupo de los números reales $(\mathbb{R}, +)$ y de los complejos $(\mathbb{C}, +)$.
+\bigskip
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{imagenes/EstructurasAlgebraicas_01.jpg}
+    \caption{Estructuras algebraicas con una sola operación interna.}
+    \label{fig:estructuras-algebraicas-01}
+\end{figure}
+
+
+\noindent \textit{En la próxima sección se presentan las principales estructuras con dos operaciones internas.}
+
+\subsubsection{Anillo}
+\label{sec:anillo}  
+
+\subsubsection{Cuerpo (o Campo)}
+\label{sec:cuerpo-campo}    
+
+\subsubsection{Álgebra de Boole}
+\label{sec:algebra-de-boole}
+
+
+
 
 
 \section{Los Números Enteros}
