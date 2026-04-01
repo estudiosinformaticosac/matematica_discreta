@@ -133,7 +133,7 @@ Existen muchas afirmaciones que sólo son válidas para un número finito de cas
 \bigskip
 
 Analicemos los siguientes ejemplos: 
-\noindent La proposición $p = n^2 \geq 1; \forall n \in \mathbb{N}$ es verdadera para todos los números naturales pero la proposición $q = n \geq 4; \forall n \in \mathbb{N}$ es falsa pues $\exists n \in \mathbb{N}$ tal que $n < 4$, como es el caso de $n = 1$.
+\noindent La proposición $p = n^2 \geq 1; \forall n \in \mathbb{N}$ es verdadera para todos los números naturales pero la proposición $q = n^2 \geq 4; \forall n \in \mathbb{N}$ es falsa pues $\exists n \in \mathbb{N}$ tal que $n < 4$, como es el caso de $n = 1$.
 \bigskip
 
 La técnica de demostración por inducción matemática es utilizada para probar que proposiciones de la forma $\forall x:P(n)$ enunciadas sobre el conjunto de los números naturales son verdaderas, o sea si la proposición $p$ está dada para cada $n \in \mathbb{N}$ por una afirmación $p(n)$, probar que $p(n)$ es Verdadera para todo $n \in \mathbb{N}$.
@@ -145,22 +145,22 @@ La demostración por la técnica de Inducción Matemática consiste en dos pasos
 \item \textbf{Paso Base:} para n = primer elemento del conjunto considerado. Se demuestra la validez de la proposición $p$ evaluada para el primer elemento del conjunto. Puede ser cualquier número natural dependiendo del punto de partida o condición inicial del problema que se está demostrando.
 
 \item\textbf{Paso Inductivo:} 
-Consiste en demostrar que la implicación $P(h) \to P(h + 1)$ es verdadera.
+Consiste en demostrar que la implicación $P(k) \to P(k + 1)$ es verdadera.
 \end{itemize}
 \bigskip
 
 \noindent \textbf{Hipótesis y Tesis Inductivas}
 \bigskip
 
-\indent Se llama \textbf{Hipótesis inductiva} a \textbf{P(h)}, es decir la proposición o afirmación evaluada para \textbf{n=h}. Se asume que la hipótesis inductiva es Verdadera.
+\indent Se llama \textbf{Hipótesis inductiva} a \textbf{P(k)}, es decir la proposición o afirmación evaluada para \textbf{n=k}. Se asume que la hipótesis inductiva es Verdadera.
 \bigskip
 
-\indent Se llama \textbf{Tesis inductiva} a \textbf{P(h + 1)}, es decir la proposición o afirmación evaluada para \textbf{n=h+1}.
+\indent Se llama \textbf{Tesis inductiva} a \textbf{P(k + 1)}, es decir la proposición o afirmación evaluada para \textbf{n=k+1}.
 
 \subsubsection{Enunciado: Primer Principio de Inducción Matemática, Débil o Clásica}
 \label{sec:enunciado-induccion-clasica}
 
-Sea $P(n)$ una propiedad que se define para enteros $n$ y sea $a$ un entero fijo. Suponga que los siguientes dos enunciados son verdaderos:
+Sea $P(n)$ una propiedad o proposición que se define para enteros $n$ y sea $a$ un entero fijo. Suponga que los siguientes dos enunciados son verdaderos:
 
 \begin{enumerate}
     \item $P(a)$ es verdadera.
@@ -192,7 +192,7 @@ Entonces, el enunciado para todo entero $n \geq a$, $P(n)$ es verdadero.
 \bigskip
 \textit{[Paso Básico]}
 
-En el paso básico de la demostración, debe verificar que la propiedad es verdadera para $n = 1$, o, dicho de otro modo que $P(1)$ es verdadera. Ahora $P(1)$ se obtiene sustituyendo $1$ en lugar de $n$ en $P(n)$. El lado izquierdo de $P(1)$ es la suma de todos los enteros sucesivos empezando en 1 y terminando en 1. Este es exactamente 1. Así $P(1)$ es
+En el paso básico de la demostración, debe verificar que la propiedad es verdadera para $n = k = 1$, o, dicho de otro modo que $P(1)$ es verdadera. Ahora $P(1)$ se obtiene sustituyendo $1$ en lugar de $n$ en $P(n)$. El lado izquierdo de $P(1)$ es la suma de todos los enteros sucesivos empezando en 1 y terminando en 1. Este es exactamente 1. Así $P(1)$ es
 
 \begin{center}
     \begin{tabular}{|c|}
@@ -289,7 +289,7 @@ Así, los dos lados de $P(k + 1)$ son iguales entre sí, por lo que la ecuación
 \subsubsection{Ejemplo: Ciclo Invariante}
 \label{sec:ejemplo-ciclo-invariante}
 
-Un ciclo invariante es una afirmación acerca de variables de programa que es verdadera justo antes de que inicie la ejecución del ciclo y también después de cada iteración del ciclo. En particular, un ciclo invariante es verdadero cuando termina el ciclo, punto en el que el invariante nos dice algo acerca del estado de las variables. De manera ideal, esta afirmación dice que el ciclo produce el resultado esperado, es decir, que el ciclo es correcto. Por ejemplo, un ciclo invariante para un ciclo ``while'' (o mientras). Mediante la inducción matemática es posible probar que un invariante tiene el comportamiento deseado. El paso base demuestra que el invariante es verdadero antes de que la condición que controla el ciclo se pruebe la primera vez. El paso inductivo supone que el invariante es verdadero y después demuestra que si la condición que controla el ciclo es verdadera (de manera que el cuerpo del ciclo se ejecuta de nuevo), el invariante es verdadero después de ejecutar el cuerpo del ciclo. Como un ciclo itera un número finito de veces, la forma de la inducción matemática usada aquí demuestra que una secuencia finita de afirmaciones es verdadera. Se utiliza un invariante de ciclo para demostrar la corrección del siguiente algoritmo:
+Un ciclo invariante es una afirmación acerca de variables de programa que es verdadera justo antes de que inicie la ejecución del ciclo y también después de cada iteración del ciclo. En particular, un ciclo invariante es verdadero cuando termina el ciclo, punto en el que el invariante nos dice algo acerca del estado de las variables. De manera ideal, esta afirmación dice que el ciclo produce el resultado esperado, es decir, que el ciclo es correcto. Por ejemplo, un ciclo invariante para un ciclo ``while'' (o mientras). Mediante la inducción matemática es posible probar que un invariante tiene el comportamiento deseado. El paso básico demuestra que el invariante es verdadero antes de que la condición que controla el ciclo se pruebe la primera vez. El paso inductivo supone que el invariante es verdadero y después demuestra que si la condición que controla el ciclo es verdadera (de manera que el cuerpo del ciclo se ejecuta de nuevo), el invariante es verdadero después de ejecutar el cuerpo del ciclo. Como un ciclo itera un número finito de veces, la forma de la inducción matemática usada aquí demuestra que una secuencia finita de afirmaciones es verdadera. Se utiliza un invariante de ciclo para demostrar la corrección del siguiente algoritmo:
 
 \begin{verbatim}
 i = 1
@@ -440,7 +440,7 @@ $S = \mathbb{N}$
 \label{sec:analisis-pbo-pim}
 
 \begin{itemize}
-    \item \textbf{Establecimiento de las Premisas Axiomáticas:} Se define un conjunto $S$ que cumple estrictamente con las dos condiciones fundamentales de la inducción matemática: contiene al elemento $1$ (caso base), y si contiene a un elemento $k$, obligatoriamente contiene a su sucesor $k+1$ (paso inductivo). El objetivo natural sería concluir que $S = \mathbb{N}$.
+    \item \textbf{Establecimiento de las Premisas Axiomáticas:} Se define un conjunto $S$ que cumple estrictamente con las dos condiciones fundamentales de la inducción matemática: contiene al elemento $1$ (paso básico), y si contiene a un elemento $k$, obligatoriamente contiene a su sucesor $k+1$ (paso inductivo). El objetivo natural sería concluir que $S = \mathbb{N}$.
     \item \textbf{Suposición para la Reducción al Absurdo:} La estrategia por contradicción exige suponer temporalmente que la conclusión deseada es falsa. Por lo tanto, se asume que $S \neq \mathbb{N}$, lo que lógicamente implica que la afirmación del PIM no se sostiene para este conjunto.
     \item \textbf{Invocación del Principio del Buen Orden (PBO):} Si $S$ no abarca todos los números naturales, su complemento relativo respecto a los naturales, denotado como $S^c$ (los elementos de $\mathbb{N}$ que no están en $S$), no es un conjunto vacío ($S^c \neq \emptyset$). Al ser $S^c$ un subconjunto no vacío de $\mathbb{N}$ se le aplica directamente el PBO, garantizando la existencia de un elemento mínimo absoluto dentro de ese complemento. A este elemento mínimo se le denomina $t$.
     \item \textbf{Construcción de la Paradoja Lógica:} Dado que $t$ es el elemento más pequeño que \textit{no pertenece} a $S$, su predecesor inmediato, $t-1$, no puede pertenecer al complemento $S^c$. Por la ley del tercero excluido, si $t-1$ es un número natural (asumiendo $t > 1$) y no está en $S^c$, obligatoriamente $t-1 \in S$. Al invocar la segunda premisa inicial (el paso inductivo): si un elemento pertenece a $S$, su sucesor también debe pertenecer. El sucesor de $t-1$ es precisamente $t$. Por aplicación estricta de la premisa, $t$ debe pertenecer a $S$.
@@ -451,34 +451,34 @@ $S = \mathbb{N}$
 \label{sec:pim_implica_pbo}
 
 \noindent \textbf{Demostración} \\
-\noindent Sea $A \subseteq \mathbb{N}$ con $A \neq \emptyset$ \\
-\indent $\cdot$ \textbf{Caso 1:} $A$ tiene elemento mínimo. \\
-\indent $\cdot$ \textbf{Caso 2:} $A$ no tiene elemento mínimo. \\
-\noindent Consideremos la propiedad $P(m) :=$ ``los naturales del $1$ al $m$ no están en $A$''. \\
+\noindent Sea $S \subseteq \mathbb{N}$ con $S \neq \emptyset$ \\
+\indent $\cdot$ \textbf{Caso 1:} $S$ tiene elemento mínimo. \\
+\indent $\cdot$ \textbf{Caso 2:} $S$ no tiene elemento mínimo. \\
+\noindent Consideremos la propiedad $P(m) :=$ ``los naturales del $1$ al $m$ no están en $S$''. \\
 \noindent Sea $B = \{m \in \mathbb{N} \mid P(m) \text{ se cumple}\}$. Entonces:
 
 \begin{enumerate}
     \item \textbf{$1 \in B$} \\
-    Notemos que si $1 \in A \Rightarrow 1$ es elemento mínimo \textit{(Contradicción)}. \\
-    $\therefore 1 \notin A$ y entonces $P(1)$ se cumple y $1 \in B$.
+    Notemos que si $1 \in S \Rightarrow 1$ es elemento mínimo \textit{(Contradicción)}. \\
+    $\therefore 1 \notin S$ y entonces $P(1)$ se cumple y $1 \in B$.
     \item \textbf{$n \in B \Rightarrow n+1 \in B$} \\
-    Supongamos que $n \in B \Rightarrow P(n)$ se cumple $\Rightarrow$ los naturales de $1$ a $n$ no están en $A$. \\
-    $\Rightarrow n+1 \notin A$, pues si $n+1 \in A$ pero $1, 2, \dots, n \notin A$, tendríamos que $n+1$ es un mínimo de $A$. \\
-    $\Rightarrow$ los naturales entre $1$ y $n+1$ no están en $A \Rightarrow P(n+1)$ se cumple $\Rightarrow n+1 \in B$.
+    Supongamos que $n \in B \Rightarrow P(n)$ se cumple $\Rightarrow$ los naturales de $1$ a $n$ no están en $S$. \\
+    $\Rightarrow n+1 \notin S$, pues si $n+1 \in S$ pero $1, 2, \dots, n \notin S$, tendríamos que $n+1$ es un mínimo de $S$. \\
+    $\Rightarrow$ los naturales entre $1$ y $n+1$ no están en $S \Rightarrow P(n+1)$ se cumple $\Rightarrow n+1 \in B$.
 \end{enumerate}
 
-\noindent Por PIM tenemos que $B = \mathbb{N}$. Notemos que si $m \in B \Rightarrow m \notin A$. Pero como $B = \mathbb{N}$ y $A \subseteq \mathbb{N} \Rightarrow A = \emptyset$ \textit{(Contradicción)}. \\
-\noindent $\therefore A$ sí tiene elemento mínimo. 
+\noindent Por PIM tenemos que $B = \mathbb{N}$. Notemos que si $m \in B \Rightarrow m \notin S$. Pero como $B = \mathbb{N}$ y $S \subseteq \mathbb{N} \Rightarrow S = \emptyset$ \textit{(Contradicción)}. \\
+\noindent $\therefore S$ sí tiene elemento mínimo. 
 
 \subsubsection{Análisis de la Implicación (PIM Implica PBO)}
 \label{sec:analisis-pim-pbo}
 \begin{itemize}    
 
-\item \textbf{Estrategia Metodológica:} La estructura argumentativa se basa en una dicotomía y una posterior prueba por contradicción (\textit{reductio ad absurdum}). Se postula un conjunto $A \subseteq \mathbb{N}$ no vacío. El análisis se bifurca: el conjunto posee un mínimo, o carece de él. Al asumir la ausencia de mínimo, se inicia un proceso lógico diseñado para generar una incompatibilidad fundamental.
-\item \textbf{El Predicado de Exclusión Acumulativa:} El eje de la demostración es la formulación de la propiedad $P(m)$: ``los naturales del $1$ al $m$ no están en $A$'', y la creación del conjunto auxiliar $B$. Esta técnica transforma una evaluación individual de elementos en una exclusión acumulativa, permitiendo que la Inducción Simple actúe con la robustez de la Inducción Fuerte.
-\item \textbf{Evaluación del Caso Base:} Si el número $1$ perteneciera a $A$, actuaría como el mínimo absoluto, violando la premisa. Se deduce inexorablemente que $1 \notin A$, validando la pertenencia de $1$ al conjunto $B$.
-\item \textbf{Transición Inductiva:} Bajo la hipótesis de que ningún natural hasta $n$ pertenece a $A$, la inclusión de $n+1$ en $A$ lo convertiría instantáneamente en el elemento mínimo. Para evitar esta contradicción con la premisa, $n+1$ debe quedar excluido de $A$, garantizando su ingreso al conjunto $B$.
-\item \textbf{Conclusión por Reducción al Absurdo:} La inducción concluye que el conjunto excluyente $B$ abarca la totalidad de los naturales ($B = \mathbb{N}$). En consecuencia, el conjunto original $A$ carece de elementos ($A = \emptyset$), lo cual infringe directamente la hipótesis inicial ($A \neq \emptyset$). El colapso del Caso 2 demuestra que todo subconjunto no vacío de $\mathbb{N}$ debe poseer un elemento mínimo.
+\item \textbf{Estrategia Metodológica:} La estructura argumentativa se basa en una dicotomía y una posterior prueba por contradicción (\textit{reductio ad absurdum}). Se postula un conjunto $S \subseteq \mathbb{N}$ no vacío. El análisis se bifurca: el conjunto posee un mínimo, o carece de él. Al asumir la ausencia de mínimo, se inicia un proceso lógico diseñado para generar una incompatibilidad fundamental.
+\item \textbf{El Predicado de Exclusión Acumulativa:} El eje de la demostración es la formulación de la propiedad $P(m)$: ``los naturales del $1$ al $m$ no están en $S$'', y la creación del conjunto auxiliar $B$. Esta técnica transforma una evaluación individual de elementos en una exclusión acumulativa, permitiendo que la Inducción Simple actúe con la robustez de la Inducción Fuerte.
+\item \textbf{Evaluación del Caso Base:} Si el número $1$ perteneciera a $S$, actuaría como el mínimo absoluto, violando la premisa. Se deduce inexorablemente que $1 \notin S$, validando la pertenencia de $1$ al conjunto $B$.
+\item \textbf{Transición Inductiva:} Bajo la hipótesis de que ningún natural hasta $n$ pertenece a $S$, la inclusión de $n+1$ en $S$ lo convertiría instantáneamente en el elemento mínimo. Para evitar esta contradicción con la premisa, $n+1$ debe quedar excluido de $S$, garantizando su ingreso al conjunto $B$.
+\item \textbf{Conclusión por Reducción al Absurdo:} La inducción concluye que el conjunto excluyente $B$ abarca la totalidad de los naturales ($B = \mathbb{N}$). En consecuencia, el conjunto original $S$ carece de elementos ($S = \emptyset$), lo cual infringe directamente la hipótesis inicial ($S \neq \emptyset$). El colapso del Caso 2 demuestra que todo subconjunto no vacío de $\mathbb{N}$ debe poseer un elemento mínimo.
 \end{itemize}
 
 
